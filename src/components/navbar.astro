@@ -1,0 +1,50 @@
+---
+import {
+  Gamepad2,
+  LayoutGrid,
+  Globe,
+  Clapperboard,
+  MessageSquareText,
+  Settings,
+  Info,
+  Wind,
+} from "@lucide/astro";
+---
+
+<nav
+  class="bg-clip-padding rounded-full border-white/25 w-min mt-[-2.5%] opacity-75 hover:opacity-100 scale-75 delay-100 hover:scale-100 hover:mt-2.5 transition-all ease-[cubic-bezier(.34,1.56,.64,1)] duration-330 fixed left-[50%] p-[5px] translate-x-[-50%] overflow-hidden border"
+>
+  <ul>
+    <li>
+      <a class="flex" href="/"
+        ><Wind class:list={"scale-[0.875] mr-1.5"} />Home</a
+      >
+    </li>
+    <li class="divider"></li>
+    <li><a href="/games"><Gamepad2 class:list={"scale-[0.875]"} /></a></li>
+    <li><a href="/apps"><LayoutGrid class:list={"scale-[0.875]"} /></a></li>
+    <li>
+      <a href="/search" class="flex"
+        ><Globe class:list={"scale-[0.875] mr-1.5"} />Search</a
+      >
+    </li>
+    <li class="flex">
+      <a href="/movies" class="flex"
+        ><Clapperboard class:list={"scale-[0.875]"} /></a
+      >
+    </li>
+    <li class="divider"></li>
+    <li class="flex">
+      <a href="/chat" class="flex"
+        ><MessageSquareText class:list={"scale-[0.875] mr-1.5"} />Messages</a
+      >
+    </li>
+    <li class="divider"></li>
+    <li class="flex">
+      <a href="/settings"><Settings class:list={"scale-[0.875]"} /></a>
+    </li>
+    <li class="flex">
+      <a href="/info"><Info class:list={"scale-[0.875]"} /></a>
+    </li>
+  </ul>
+</nav>

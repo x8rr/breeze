@@ -1,11 +1,42 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <div
+    class="fixed text-center top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]"
+  >
+    <h1 class="text-8xl text-slate-700 font-black">breeze.</h1>
+    <p class="text-xl font-medium text-slate-600">the navbar is up there btw</p>
+    <br />
+    <input
+      id="homesearch"
+      placeholder="enter a url or search here"
+      class="bg-slate-900 border border-white/10 w-1/1 h-12 p-3 rounded-full focus:outline-none focus:border-2 focus:border-white/20 transition-all duration-150"
+      type="text"
+    />
+  </div>
 </Layout>
+
+<script>
+  const homesearch = document.getElementById("homesearch") as HTMLInputElement;
+
+  function rSearch(input: string) {
+    let url = input;
+    if (!url.includes(".") || url.includes(" ")) {
+      url = "https://search.brave.com/search?q=" + url;
+    } else {
+      if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "https://" + url;
+      }
+    }
+
+    location.href = "/search?i=" + url;
+  }
+
+  homesearch?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      rSearch(homesearch?.value.trim());
+    }
+  });
+</script>

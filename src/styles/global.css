@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(at bottom, #000d1b 1%, #050b13 100%);
+    color: white;
+}
+
+* {
+    font-family: SF Pro Display;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+}
+
+nav {
+    background: linear-gradient(to right, rgb(4, 6, 8), rgb(15, 19, 27), rgb(15,
+        19,
+        27), rgb(4, 6, 8));
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+}
+
+nav ul li {
+    margin: 5px;
+    background: #ffffff05;
+    border: 1px solid rgba(255, 255, 255, 0.171);
+    border-radius: 100px;
+    padding: 5px 15px;
+    transition: 0.15s;
+}
+
+nav ul li:hover {
+    scale: 1.05;
+    background: #ffffff33;
+    cursor: pointer;
+}
+
+nav ul li.divider {
+    background: rgba(128, 128, 128, 0.445);
+    width: 2px;
+    height: 20px;
+    position: relative;
+    transform: translateY(40%);
+    padding: 0;
+}
