@@ -1359,13 +1359,4 @@
             console.log("check")
         });
 
-        const browserWindow = document.querySelector(".browser-container")
-
-        document.addEventListener("keydown", e => {
-            if (e.ctrlKey && e.key === "t" && browserWindow.classList.contains("active")) {
-                newTab()
-            } else if (e.ctrlKey && e.key === "w" && browserWindow.classList.contains("active")) {
-                closeTab(bTabs.length)
-            }
-
     </script>
